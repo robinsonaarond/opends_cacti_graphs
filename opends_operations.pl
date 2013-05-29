@@ -100,9 +100,8 @@ if ( $bind->code ) {
 ### LDAP Search updated for use with OpenDS on an OpenDJ server implementation. -ADR
 my $h = "ds-mon";
 my $f = "operations-total-count";
-my $dsfilter = 'cn=LDAP Connection Handler 0.0.0.0 port 389 Statistics';
-# Potential other connections that might be useful.  636 recommended for SSL traffic.
-#my $dsfilter = 'cn=LDAP Connection Handler 0.0.0.0 port 636 Statistics';
+my $dsfilter = "cn=LDAP Connection Handler 0.0.0.0 port $port Statistics";
+# Potential other connections that might be useful.
 #my $dsfilter = 'cn=Administration Connector 0.0.0.0 port 4444 Statistics';
 my $search = $ldap->search(
     base   => 'cn=monitor',
